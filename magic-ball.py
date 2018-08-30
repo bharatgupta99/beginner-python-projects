@@ -14,14 +14,18 @@ def quit():
 	top.destroy()
 
 def play_again():
+	result.config(state='normal')
 	input_box.delete(0, 'end')
 	result.delete(1.0, 'end')
 
 def ask():
 	if input_box.get() != '':
+		result.config(state='normal')
+		result.delete(1.0, 'end')
 		result.insert('end','thinking....')
 		result.after(2000, result_delay )
 	else:
+		result.config(state='normal')
 		result.delete(1.0, 'end')
 		result.insert('insert','thinking....')
 		result.config(state='disabled')
@@ -29,7 +33,7 @@ def ask():
 def result_delay():
 	responses = ['thank you', 'that\' a good one', 'seems good', 'i don\'t care', 'true that!', 'mind you language', 'hahah thats funny', 'pretty good', 'soon..', 'you are a dog person', 'cat do bite', 'hey!!', 'false', 'not true', 'true']
 	result.delete(1.0, 'end')
-	result.insert('insert', responses[random.randint(0, 15)])
+	result.insert('insert', responses[random.randint(0, len(responses) - 1)])
 	result.config(state='disabled')
 
 
