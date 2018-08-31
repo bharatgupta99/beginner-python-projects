@@ -20,15 +20,6 @@ details = {
 	'dime' : [weight_of_dimes, 2.268, 113.4],
 	'nickel' : [weight_of_quaters, 5.0, 200.0],
 }
-weight_of_penny = 2.500
-weight_of_quater = 5.670
-weight_of_dime = 2.268
-weight_of_nickel = 5.000
-
-weight_of_penny_wrapper = 125
-weight_of_quater_wrapper = 226.8
-weight_of_dime_wrapper = 113.4
-weight_of_nickel_wrapper = 200
 
 for i in range(0, len(details)):
 	no_of_wrappers = ceil( details[currencies[i]][0] / details[currencies[i]][2] )
